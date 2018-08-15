@@ -1,0 +1,55 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Consultar persona'" [icon]="'fa-edit'"></app-page-header>
+
+  <div class="row">
+    <div class="col col-xl-12 col-lg-12">
+
+
+      <div class="card mb-3">
+        <div class="card-header">Personas</div>
+        <div class="card-body table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Tipo</th>
+                <th>Cédula</th>
+                <th>Nombre</th>
+                <th>Dirección</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Roles</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let persona of personas | async">
+                <td>
+                  <button (click)="verPersona(persona)">ver</button>
+                </td>
+                <td>{{persona.data.tipo | uppercase}}</td>
+                <td>{{persona.data.cedula | uppercase}}</td>
+                <td><a href="/persona/informacionpersona/{{persona.id}}">{{persona.data.nombre | uppercase}}</a></td>
+                <td>{{persona.data.direccion | uppercase}}</td>
+                <td>{{persona.data.correo }}</td>
+                <td>{{persona.data.telefono}}</td>
+                <td>
+                  <p *ngIf="persona.data.cliente">Cliente</p>
+                  <p *ngIf="persona.data.empleado">Empleado</p>
+                </td>
+              </tr>
+
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+</div>

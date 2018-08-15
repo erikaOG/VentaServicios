@@ -1,0 +1,50 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Crear Vehículo'" [icon]="'fa-edit'"></app-page-header>
+
+
+    <div class="row">
+        <div class="col-lg-4">
+            <hr>
+            <form class="form" [formGroup]="vehiculoForm" (ngSubmit)="guardarVehiculo()">
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="inputPassword2" class="">ID / PLACA</label>
+                    <input autofocus type="text" class="form-control" formControlName="placa" id="inputPassword2" placeholder="ID o Placa">
+                </div>
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="inputPassword2" class="">MARCA</label>
+                    <input type="text" class="form-control" formControlName="marca" id="inputPassword2" placeholder="Marca">
+                </div>
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="inputPassword2" class="">MODELO</label>
+                    <input type="text" class="form-control" formControlName="modelo" id="inputPassword2" placeholder="modelo">
+                </div>
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="inputPassword2" class="">COLOR</label>
+                    <input type="text" class="form-control" formControlName="color" id="inputPassword2" placeholder="Color">
+                </div>
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="inputPassword2" class="">No MOTOR</label>
+                    <input type="text" class="form-control" formControlName="numeroMotor" id="inputPassword2" placeholder="No Motor">
+                </div>
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="inputPassword2" class="">No CHASIS</label>
+                    <input type="text" class="form-control" formControlName="numeroChasis" id="inputPassword2" placeholder="No Chasis">
+                </div>
+
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="inputPassword2" class="">Año fabricación</label>
+                    <input type="text" class="form-control" formControlName="anioFabricacion" id="inputPassword2" placeholder="No Chasis">
+                </div>
+
+
+                <button [disabled]="!vehiculoForm.valid" type="submit" class="btn btn-primary mb-2">Guardar Vehículo</button>
+            </form>
+
+
+            <hr>
+        </div>
+    </div>
+
+
+
+</div>

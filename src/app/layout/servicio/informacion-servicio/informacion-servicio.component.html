@@ -1,0 +1,27 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Información servicios'" [icon]="'fa-edit'"></app-page-header>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-sm table-bordered">
+
+                <tbody>
+                    <tr>
+                        <th>Codigo</th>
+                        <td>{{ (servicios | async)?.codigo }}</td>
+                    </tr>
+                    <tr>
+                        <th>Descripcion</th>
+                        <td>{{ (servicios | async)?.descripcion }}</td>
+                    </tr>
+                    <tr>
+                        <th>Tiempo Estandar</th>
+                        <td>{{ (servicios | async)?.tiempoEstandar }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

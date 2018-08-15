@@ -1,0 +1,47 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Información vehículo'" [icon]="'fa-edit'"></app-page-header>
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table table-sm table-bordered">
+
+        <tbody>
+          <tr>
+            <th>ID / Placa</th>
+            <td>{{ (vehiculo | async)?.placa }}</td>
+          </tr>
+          <tr>
+            <th>Marca</th>
+            <td>{{ (vehiculo | async)?.marca }}</td>
+          </tr>
+          <tr>
+            <th>Modelo</th>
+            <td>{{ (vehiculo | async)?.modelo }}</td>
+          </tr>
+          <tr>
+            <th>Color</th>
+            <td>{{ (vehiculo | async)?.color }}</td>
+          </tr>
+          <tr>
+            <th>No. Motor</th>
+            <td>{{ (vehiculo | async)?.numeroMotor }}</td>
+          </tr>
+          <tr>
+            <th>No. Chasis</th>
+            <td>{{ (vehiculo | async)?.numeroChasis }}</td>
+          </tr>
+
+          <tr>
+            <th>Año de fabricación</th>
+            <td>{{ (vehiculo | async)?.anioFabricacion }}</td>
+          </tr>
+      
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+</div>

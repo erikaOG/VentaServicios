@@ -1,0 +1,7 @@
+<router-outlet></router-outlet>
+<ul>
+    <li class="text" *ngFor="let item of items | async">
+      {{item.correo}}
+      <button (click)="timbrar(item)">Timbrar</button>
+    </li>
+  </ul>

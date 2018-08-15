@@ -1,0 +1,70 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Crear persona'" [icon]="'fa-edit'"></app-page-header>
+    <div class="row">
+        <div class="col-lg-4">
+            <hr>
+            <form class="form" [formGroup]="personaForm" (ngSubmit)="guardarPersona()">
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="staticEmail2" class="">Estado</label>
+
+                    <select class="form-control" formControlName="estado" name="" id="">
+                        <option value="Activo">Activo</option>
+                        <option value="Inactivo">Inactivo</option>
+                    </select>
+                </div>
+
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="staticEmail2" class="">Tipo</label>
+
+                    <select class="form-control" formControlName="tipo" name="" id="">
+                        <option value="Natural">Natural</option>
+                        <option value="Juridica">Juridica</option>
+                        <option value="Sin Ruc">Sin Ruc</option>
+                    </select>
+                </div>
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="inputPassword2" class="">Cédula / RUC</label>
+                    <input autofocus type="text" class="form-control" formControlName="cedula" id="inputPassword2" placeholder="Cédula o RUC">
+                </div>
+
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="inputPassword2" class="">Nombre</label>
+                    <input type="text" class="form-control" formControlName="nombre" id="inputPassword2" placeholder="Nombre">
+                </div>
+
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="inputPassword2" class="">Dirección</label>
+                    <input type="text" class="form-control" formControlName="direccion" id="inputPassword2" placeholder="Dirección">
+                </div>
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="inputPassword2" class="">Teléfono</label>
+                    <input type="text" class="form-control" formControlName="telefono" id="inputPassword2" placeholder="Teléfono">
+                </div>
+
+                <div class="form-group mx-sm-2 mb-2">
+                    <label for="inputPassword2" class="">Correo</label>
+                    <input type="text" class="form-control" formControlName="correo" id="inputPassword2" placeholder="Correo">
+                </div>
+                <div class="form-group">
+                    <label>Roles de la persona en la empresa</label>
+                    <div class="checkbox">
+                        <label>
+                                <input type="checkbox" formControlName="cliente"> Cliente
+                            </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                                <input type="checkbox" formControlName="empleado"> Empleado
+                            </label>
+                    </div>
+
+                </div>
+                <button [disabled]="!personaForm.valid" type="submit" class="btn btn-primary mb-2">Guardar Persona</button>
+            </form>
+            <hr>
+        </div>
+    </div>
+
+
+
+</div>

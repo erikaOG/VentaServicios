@@ -1,0 +1,49 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Información persona'" [icon]="'fa-edit'"></app-page-header>
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table table-sm table-bordered">
+
+        <tbody>
+          <tr>
+            <th>Tipo</th>
+            <td>{{ (persona | async)?.tipo }}</td>
+          </tr>
+          <tr>
+            <th>Cédula / RUC</th>
+            <td>{{ (persona | async)?.cedula }}</td>
+          </tr>
+          <tr>
+            <th>Nombre / Razón social</th>
+            <td>{{ (persona | async)?.nombre }}</td>
+          </tr>
+          <tr>
+            <th>Dirección</th>
+            <td>{{ (persona | async)?.direccion }}</td>
+          </tr>
+          <tr>
+            <th>Correo</th>
+            <td>{{ (persona | async)?.correo }}</td>
+          </tr>
+          <tr>
+            <th>Teléfono</th>
+            <td>{{ (persona | async)?.telefono }}</td>
+          </tr>
+          <tr>
+            <th>Roles</th>
+            <td>
+              <p *ngIf="(persona | async)?.cliente">Cliente</p>
+              <p *ngIf="(persona | async)?.empleado">Empleado</p>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+</div>
