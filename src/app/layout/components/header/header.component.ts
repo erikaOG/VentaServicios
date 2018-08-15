@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class HeaderComponent implements OnInit {
     pushRightClass: string = 'push-right';
 
-    usuario: any = localStorage.getItem('usuario')
+    usuario: any = localStorage.getItem('usuario') 
 
     constructor(private translate: TranslateService, public router: Router) {
 

@@ -1,27 +1,20 @@
 <div [@routerTransition]>
     <app-page-header [heading]="'Información servicios'" [icon]="'fa-edit'"></app-page-header>
-
-
     <div class="row">
-        <div class="col-md-6">
-            <table class="table table-sm table-bordered">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    Servicio: {{ (servicios | async)?.descripcion }}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <h5 class="card-title">Detalle: {{ (servicios | async)?.detalle }}</h5>
+                    <p class="card-text"></p>
+                    <button class="btn btn-primary" type="button">9:30 - 11:30</button>
+                    <button class="btn btn-primary" type="button">11:30 - 13:30</button>
+                    <button class="btn btn-primary" type="button">14:30 - 15:30</button>
 
-                <tbody>
-                    <tr>
-                        <th>Codigo</th>
-                        <td>{{ (servicios | async)?.codigo }}</td>
-                    </tr>
-                    <tr>
-                        <th>Descripcion</th>
-                        <td>{{ (servicios | async)?.descripcion }}</td>
-                    </tr>
-                    <tr>
-                        <th>Tiempo Estandar</th>
-                        <td>{{ (servicios | async)?.tiempoEstandar }}</td>
-                    </tr>
-                </tbody>
-            </table>
+                </div>
+            </div>
         </div>
     </div>
-
-</div>

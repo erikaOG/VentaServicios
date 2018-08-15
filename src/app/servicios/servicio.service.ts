@@ -30,4 +30,9 @@ export class ServicioService {
   obtenerUnaServicios(id){
     return this.empresa.collection('servicios').doc(id).valueChanges()
    }
+
+   obtenerUnaEmpresa(id){
+     
+    return this.afs.collection('empresa').doc(id).valueChanges()
+   }
 }
