@@ -25,7 +25,7 @@
                         </div>
                         <div class="card-body">
                             <div class="list-group" *ngFor="let servicios of servicios | async">
-                                <button type="button" class="list-group-item list-group-item-action">{{servicios.data.descripcion}}</button>
+                                <button type="button" class="list-group-item list-group-item-action" (click)="seleccionarServicio(servicios)">{{servicios.data.descripcion}}</button>
                             </div>
                         </div>
                     </div>
@@ -39,12 +39,12 @@
                         <div class="card-header">
                             Detalle de Servicio:
                         </div>
-                        <div class="card-body">
+                        <div *ngIf="servicioSeleccionado!=null" class="card-body">
                             <h5 class="card-title"></h5>
-                            <h5 class="card-title"> LAVADO ExPRESS{{ (servicios | async)?.detalle }}</h5>
-                            <p class="card-text">Descripción: {{ (servicios | async)?.detalle }}</p>
-                            <p class="card-text">Detalle: {{ (servicios | async)?.detalle }}</p>
-                            <p class="card-text">Tiempo Estimado: {{ (servicios | async)?.detalle }}</p>
+                            <h5 class="card-title"> {{servicioSeleccionado.data.descripcion}}</h5>
+                            <p class="card-text">{{servicioSeleccionado.data.detalle}}</p>
+                            <p class="card-text">Tiempo Estimado: {{servicioSeleccionado.data.tiempoEstandar}}</p>
+
                             <button class="btn btn-primary" type="button">9:30 - 11:30</button>
                             <button class="btn btn-primary" type="button">11:30 - 13:30</button>
                             <button class="btn btn-primary" type="button">14:30 - 15:30</button>
